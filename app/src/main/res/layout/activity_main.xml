@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--外层竖线布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#010101">
+
+    <!--内层线性横向布局-->
+    <!--输入框-->
+    <!--权重为2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+
+        <!--使用sp作为字体大小单位,会随着系统的字体大小改变而dp作为单位则不会-->
+        <TextView
+            android:id="@+id/textInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40sp"
+            android:textColor="#899a94"
+            android:hint="请输入算式"
+            android:textColorHint="#899a94"/>
+
+    </LinearLayout>
+
+    <!--输出框-->
+    <!--权重为1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <!--使用sp作为字体大小单位,会随着系统的字体大小改变而dp作为单位则不会-->
+        <TextView
+            android:id="@+id/textOutput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:textSize="50sp"
+            android:textColor="#ffffff"
+            android:hint="0"
+            android:textColorHint="#ffffff"/>
+
+    </LinearLayout>
+
+    <!--第一行按钮;权重为1;每行四个-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="2sp"
+        android:layout_weight="1"
+        android:weightSum="5">
+
+        <!--ANS按钮-->
+        <Button
+            android:id="@+id/ANS"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/ANS"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#212121" />
+
+        <!--AC按钮-->
+        <Button
+            android:id="@+id/AC"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/AC"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#a4a4a4"/>
+
+        <!--DEL按钮-->
+        <Button
+            android:id="@+id/DEL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/DEL"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#a4a4a4"/>
+
+        <!--正负变化按钮-->
+        <Button
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/status"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#a4a4a4"/>
+
+        <!--除法按钮-->
+        <Button
+            android:id="@+id/divide"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/divide"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+    </LinearLayout>
+
+    <!--第二行按钮-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2sp"
+        android:layout_marginBottom="2sp"
+        android:layout_weight="1"
+        android:weightSum="5">
+
+        <!--(按钮-->
+        <Button
+            android:id="@+id/leftbracket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/leftbracket"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#212121"/>
+
+        <!--7按钮-->
+        <Button
+            android:id="@+id/seven"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/seven"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--8按钮-->
+        <Button
+            android:id="@+id/eight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/eight"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--9按钮-->
+        <Button
+            android:id="@+id/nine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/nine"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--乘法按钮-->
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/multiply"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+    </LinearLayout>
+
+    <!--第三行按钮-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2sp"
+        android:layout_marginBottom="2sp"
+        android:layout_weight="1"
+        android:weightSum="5">
+
+        <!--)按钮-->
+        <Button
+            android:id="@+id/rightbracket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/rightbracket"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#212121"/>
+
+        <!--4按钮-->
+        <Button
+            android:id="@+id/four"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/four"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--5按钮-->
+        <Button
+            android:id="@+id/five"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/five"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--6按钮-->
+        <Button
+            android:id="@+id/six"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/six"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--减法按钮-->
+        <Button
+            android:id="@+id/subtract"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/subtract"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+    </LinearLayout>
+
+    <!--第四行按钮-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2sp"
+        android:layout_marginBottom="2sp"
+        android:layout_weight="1"
+        android:weightSum="5">
+
+        <!--乘方按钮-->
+        <Button
+            android:id="@+id/power"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/power"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#212121"/>
+
+        <!--1按钮-->
+        <Button
+            android:id="@+id/one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/one"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--2按钮-->
+        <Button
+            android:id="@+id/two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/two"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--3按钮-->
+        <Button
+            android:id="@+id/three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/three"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--加法按钮-->
+        <Button
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/add"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+    </LinearLayout>
+
+    <!--第五行按钮-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2sp"
+        android:layout_marginBottom="2sp"
+        android:layout_weight="1"
+        android:weightSum="5">
+
+        <!--阶乘按钮-->
+        <Button
+            android:id="@+id/factorial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/factorial"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#212121"/>
+
+        <!--0按钮-->
+        <Button
+            android:id="@+id/zero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/zero"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--小数点按钮-->
+        <Button
+            android:id="@+id/point"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/point"
+            android:textColor="#899a94"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#333333"/>
+
+        <!--百分号按钮-->
+        <Button
+            android:id="@+id/mod"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/mod"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+        <!--等号按钮-->
+        <Button
+            android:id="@+id/equal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:text="@string/equal"
+            android:textColor="#fefcff"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:background="#f8952d"/>
+
+    </LinearLayout>
+
+</LinearLayout>
