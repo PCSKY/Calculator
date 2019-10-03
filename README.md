@@ -1,6 +1,4 @@
-# Calculator
-<<<<<<< HEAD
-=======
+#Calculator
 这是一款简易的Android计算器，是本人用于熟悉Android的UI布局以及计算器的中缀转后缀算法的一个小项目
 <br/><br/><br/>
 # 布局&取色
@@ -19,4 +17,3 @@
 [计算器UI设计](http://www.sj33.cn/digital/uisj/201609/46378.html) <br/>
 [运算符优先级](https://baike.baidu.com/item/运算符优先级/4752611?fr=aladdin#2) <br/>
 [中缀转后缀的一些思路](https://blog.csdn.net/BaiBai_Yazi/article/details/83215521) <br/>
->>>>>>> a3854a0bca5f06d5368461c51381596078a5ee01
