@@ -1,5 +1,8 @@
 # Calculator
-这是一款简易的Android计算器，是本人用于熟悉Android的UI布局以及计算器的中缀转后缀算法的一个小项目，若想尝试使用可以打开/app/release文件夹找到apk文件
+这是一款简易的Android计算器，是本人用于熟悉Android的UI布局以及计算器的中缀转后缀算法的一个小项目，若想尝试使用可以打开/app/release文件夹找到apk文件<br/><br/>
+[calculator V1.0.1](https://github.com/PCSKY/Calculator/blob/master/app/release/calculator_V1.0_C1release.apk)
+<br/>
+[calculator_v1.0.2](https://github.com/PCSKY/Calculator/blob/master/app/release/calculator_V1.0_C2release.apk)
 <br/><br/><br/>
 # 开发工具
 Android studio 3.3.0
@@ -21,12 +24,17 @@ Android studio 3.3.0
 ![普通四则运算](https://github.com/PCSKY/Calculator/blob/master/img/runTest1.png)
 ![阶乘](https://github.com/PCSKY/Calculator/blob/master/img/runTest2.png)
 ![百分号](https://github.com/PCSKY/Calculator/blob/master/img/runTest3.png)
+![大数计算](https://github.com/PCSKY/Calculator/blob/master/img/runTest4.png)
 <br/><br/><br/>
-# 可改进之处
-* 阶乘与乘方无法计算较大的数字，可考虑用BigNumber类改进
+# 改进
+* 阶乘与乘方无法计算较大的数字，可考虑用BigDecimal类改进
 * 此计算器只是完成了简单的四则运算，日后可尝试增加科学计算器的功能
 * 尚且无法保留历史纪录，只能查看上一次的答案
 * +/-状态变化还不完善，只能用于答案，可尝试改进用于等式
+<br/><br/><br/>
+# 已完善
+* 基本运算使用BigDecimal进行完善，不会出现小数精度问题
+* 答案如果过长则改为科学计数法显示
 <br/><br/><br/>
 # 参考链接
 [Android简单计算器实现](https://blog.csdn.net/sakurakider/article/details/76283801) <br/>
