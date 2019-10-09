@@ -1,5 +1,4 @@
 # Calculator
-<img width="150" height="150" src="https://github.com/PCSKY/Calculator/blob/master/img/icon.png"/>
 这是一款简易的Android计算器，是本人用于熟悉Android的UI布局以及计算器的中缀转后缀算法的一个小项目，若想尝试使用可以打开/app/release文件夹找到apk文件<br/><br/>
 [calculator V1.0.1](https://github.com/PCSKY/Calculator/blob/master/app/release/calculator_V1.0_C1release.apk)
 <br/>
