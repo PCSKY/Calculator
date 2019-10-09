@@ -1,7 +1,7 @@
 <resources>
     <!--做到统一添加字符串-->
     <string name="app_name">Calculator</string>
-    <string name="app_names">不科学计算器</string>
+    <string name="app_names">不科学计算器plus</string>
     <string name="AC">AC</string>
     <string name="DEL">DEL</string>
     <string name="ANS">ANS</string>

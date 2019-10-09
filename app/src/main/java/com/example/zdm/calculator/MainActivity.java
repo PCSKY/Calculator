@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
@@ -248,6 +252,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } catch (Exception ex) {
                         answer = "出错";
                     }
+                    if(answer.length() >= 14)
+                    {
+                        // 答案过长则转换为科学记数法显示
+                        BigDecimal tmp = new BigDecimal(answer+".0", new MathContext(5, RoundingMode.HALF_UP));   // //构造BigDecimal时指定有效精度
+                        answer = tmp.toEngineeringString();   // 然后使用toEngineeringString
+                    }
                     textOutput.setText(answer);
                     pending = pending.delete(0, pending.length());
                     if (Character.isDigit(answer.charAt(0)))
@@ -321,6 +331,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ANS:
             {
                 //pending = pending.delete(0, pending.length());
+                judge3();
                 pending.append(answer);
                 textInput.setText(pending);
                 break;

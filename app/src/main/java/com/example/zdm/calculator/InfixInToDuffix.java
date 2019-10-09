@@ -1,5 +1,8 @@
 package com.example.zdm.calculator;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -119,11 +122,56 @@ public class InfixInToDuffix
         {   //此处就是上面说的运算过程，因为list.remove的缘故导致remove元素后面的下标变化，所以取出最后一个数个最后两个数都是size-2
             int size = list.size(); // 指向找到的第一个符号
             switch (arr[i]) {
-                case "+": double a = Double.parseDouble(list.remove(size-2)) + Double.parseDouble(list.remove(size-2)); list.add(String.valueOf(a)); break;
-                case "-": double b = Double.parseDouble(list.remove(size-2)) - Double.parseDouble(list.remove(size-2)); list.add(String.valueOf(b)); break;
-                case "×": double c = Double.parseDouble(list.remove(size-2)) * Double.parseDouble(list.remove(size-2)); list.add(String.valueOf(c)); break;
-                case "÷": double d = Double.parseDouble(list.remove(size-2)) / Double.parseDouble(list.remove(size-2)); list.add(String.valueOf(d)); break;
-                case "%": double e = Double.parseDouble(list.remove(size-1)); list.add(String.valueOf(e/100.0)); break; // %运算为百分号运算
+                case "+":
+                {
+                    BigDecimal first = new BigDecimal(list.remove(size-2));   // 第一个数(使用String传参不会有误差)
+                    BigDecimal second = new BigDecimal(list.remove(size-2));  // 第二个数
+                    BigDecimal a = first.add(second);  // 答案
+                    String ans = a.toString();   // 转化为String存储
+                    list.add(ans); break;
+                    //double a = Double.parseDouble(list.remove(size-2)) + Double.parseDouble(list.remove(size-2));
+                    //list.add(String.valueOf(a)); break;
+                }
+                case "-":
+                {
+                    BigDecimal first = new BigDecimal(list.remove(size-2));   // 第一个数
+                    BigDecimal second = new BigDecimal(list.remove(size-2));  // 第二个数
+                    BigDecimal b = first.subtract(second);
+                    String ans = b.toString();
+                    list.add(ans); break;
+                    //double b = Double.parseDouble(list.remove(size-2)) - Double.parseDouble(list.remove(size-2));
+                    //list.add(String.valueOf(b)); break;
+                }
+                case "×":
+                {
+                    BigDecimal first = new BigDecimal(list.remove(size-2));   // 第一个数
+                    BigDecimal second = new BigDecimal(list.remove(size-2));  // 第二个数
+                    BigDecimal c = first.multiply(second);
+                    String ans = c.toString();
+                    list.add(ans); break;
+                    //double c = Double.parseDouble(list.remove(size-2)) * Double.parseDouble(list.remove(size-2));
+                    //list.add(String.valueOf(c)); break;
+                }
+                case "÷":
+                {
+                    BigDecimal first = new BigDecimal(list.remove(size-2));   // 第一个数
+                    BigDecimal second = new BigDecimal(list.remove(size-2));  // 第二个数
+                    BigDecimal d = first.divide(second, 10, BigDecimal.ROUND_HALF_UP); // 除法要精确小数位数与舍入模式(ROUND_HALF_UP向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则为向上舍入的舍入模式)
+                    String ans = d.stripTrailingZeros().toPlainString();   // 去除多余的零，使用toPlainString()可以防止用科学记数法输出
+                    list.add(ans); break;
+                    //double d = Double.parseDouble(list.remove(size-2)) / Double.parseDouble(list.remove(size-2));
+                    //list.add(String.valueOf(d)); break;
+                }
+                case "%":
+                {
+                    BigDecimal first = new BigDecimal(list.remove(size-1));   // 第一个数(%只需要list中的一个数)
+                    BigDecimal second = new BigDecimal("100"); // 第二个数为100
+                    BigDecimal e = first.divide(second, 10, BigDecimal.ROUND_HALF_UP);
+                    String ans = e.stripTrailingZeros().toPlainString();   // 去除多余的零，使用toPlainString()可以防止用科学记数法输出
+                    list.add(ans); break;
+                    //double e = Double.parseDouble(list.remove(size-1)); list.add(String.valueOf(e/100.0));
+                    //break; // %运算为百分号运算
+                }
                 case "^": double f = Math.pow(Double.parseDouble(list.remove(size-2)), Double.parseDouble(list.remove(size-2))); list.add(String.valueOf(f)); break;
                 case "!": double g = Double.parseDouble(list.remove(size-1)); list.add(String.valueOf(factorial(g))); break; // 阶乘为独立计算，所以前面只有一个数字
                 default: list.add(arr[i]); break; //如果是数字，直接放进list中
