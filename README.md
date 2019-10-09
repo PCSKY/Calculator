@@ -27,14 +27,13 @@ Android studio 3.3.0
 ![大数计算](https://github.com/PCSKY/Calculator/blob/master/img/runTest4.png)
 <br/><br/><br/>
 # 改进
-* 阶乘与乘方无法计算较大的数字，可考虑用BigDecimal类改进
-* 此计算器只是完成了简单的四则运算，日后可尝试增加科学计算器的功能
-* 尚且无法保留历史纪录，只能查看上一次的答案
-* +/-状态变化还不完善，只能用于答案，可尝试改进用于等式
-<br/><br/><br/>
-# 已完善
-* 基本运算使用BigDecimal进行完善，不会出现小数精度问题
-* 答案如果过长则改为科学计数法显示
+- [x] 基本运算使用BigDecimal进行完善，不会出现小数精度问题
+- [x] 答案如果过长则改为科学计数法显示
+- [ ] 用BigDecimal类改进阶乘与乘方
+- [ ] 尝试增加科学计算器的功能  
+- [ ] 保留更多的历史纪录
+- [ ] 完善+/-状态变化
+- [ ] 参考windows计算器相应增加日常功能
 <br/><br/><br/>
 # 参考链接
 [Android简单计算器实现](https://blog.csdn.net/sakurakider/article/details/76283801) <br/>
