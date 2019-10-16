@@ -5,7 +5,7 @@
 [calculator_v1.0.2](https://github.com/PCSKY/Calculator/blob/master/app/release/calculator_V1.0_C2release.apk)
 <br/><br/><br/>
 # 开发工具
-Android studio 3.3.0
+Windows10 + Android studio 3.3.0
 <br/><br/><br/>
 # 布局&取色
 * 计算器采用的是Android中的LinearLayout布局，最底部通过一个适应于屏幕的LinearLayout布局作为底层布局，并且设置为黑色
