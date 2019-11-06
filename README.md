@@ -40,6 +40,8 @@ Windows10 + Android studio 3.3.0
 * [android开发button的实现方法](https://blog.csdn.net/qq_37570066/article/details/77431474) <br/>
 * [计算器UI设计](http://www.sj33.cn/digital/uisj/201609/46378.html) <br/>
 * [运算符优先级](https://baike.baidu.com/item/运算符优先级/4752611?fr=aladdin#2) <br/>
+* [中缀转后缀规则](https://www.cnblogs.com/hantalk/p/8734511.html) <br/>
+* [中缀转后缀图解](http://www.nowamagic.net/librarys/veda/detail/2307) <br/>
 * [中缀转后缀的一些思路](https://blog.csdn.net/BaiBai_Yazi/article/details/83215521) <br/>
 * [BigDecimal基本运算](https://blog.csdn.net/haiyinshushe/article/details/82721234) <br/>
 * [BigDecimal去掉小数后多余0](https://blog.csdn.net/qq_33157666/article/details/79585225) <br/>
